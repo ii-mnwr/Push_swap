@@ -1,11 +1,11 @@
-CC = CC
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC_PS = main.c ft_lstadd_front.c ft_lstadd_back.c ft_lstlast.c ft_lstnew.c ft_lstprint.c\
 	ft_lstsize.c ft_memcpy.c ft_putstr.c ft_split.c ft_strlen.c ft_substr.c ft_atoi.c\
 	ps_moves_1.c ps_moves_2.c ps_sorting.c ps_utils_1.c ps_utils_2.c\
 
-SRC_CHECKER = get_next_line.c ft_putendl_fd.c ft_strcmp.c checker.c ft_lstadd_front.c ft_lstadd_back.c ft_lstlast.c ft_lstnew.c ft_lstprint.c\
+SRC_CHECKER = get_next_line.c checker_utils.c ft_putendl_fd.c ft_strcmp.c checker.c ft_lstadd_front.c ft_lstadd_back.c ft_lstlast.c ft_lstnew.c ft_lstprint.c\
 	ft_lstsize.c ft_memcpy.c ft_putstr.c ft_split.c ft_strlen.c ft_substr.c ft_atoi.c\
 	ps_moves_1.c ps_moves_2.c ps_sorting.c ps_utils_1.c ps_utils_2.c ft_putstr_fd.c ft_putchar_fd.c\
 
