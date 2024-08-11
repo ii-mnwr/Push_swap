@@ -6,7 +6,7 @@
 /*   By: mthodi <mthodi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 09:17:05 by mthodi            #+#    #+#             */
-/*   Updated: 2024/08/10 10:10:00 by mthodi           ###   ########.fr       */
+/*   Updated: 2024/08/11 16:24:14 by mthodi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@
 # include <stdlib.h>
 # include "libft.h"
 
-void	sa_sb(t_list **a, char swap_type);
+void	sa_sb(t_list **a, char swap_type, int flag);
 void	ss(t_list **a, t_list **b);
-void	pa(t_list **a, t_list **b);
-void	pb(t_list **a, t_list **b);
-void	ra_rb(t_list **a, char swap_type);
+void	pa(t_list **a, t_list **b, int flag);
+void	pb(t_list **a, t_list **b, int flag);
+void	ra_rb(t_list **a, char swap_type, int flag);
 void	rr(t_list **a, t_list **b);
-void	rra_rrb(t_list **a, char swap_type);
+void	rra_rrb(t_list **a, char swap_type, int flag);
+void	rrr(t_list **a, t_list **b);
 
 void	three_num_sort(t_list **a);
 void	four_num_sort(t_list **a, t_list **b);

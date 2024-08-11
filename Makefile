@@ -18,21 +18,21 @@ NAME_CHECKER = checker
 all: $(NAME_PS)
 
 $(NAME_PS): $(OBJ_PS)
-		$(CC) $(CFLAGS) -o $@ $^
+		@$(CC) $(CFLAGS) -o $@ $^
 
 bonus: $(NAME_CHECKER)
 
 $(NAME_CHECKER): $(OBJ_CHECKER)
-		$(CC) $(CFLAGS) -o $@ $^
+		@$(CC) $(CFLAGS) -o $@ $^
 
 %.o: %.c
 		$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(OBJ_PS) $(OBJ_CHECKER)
+	@rm -f $(OBJ_PS) $(OBJ_CHECKER)
 
 fclean: clean
-		rm -f $(NAME_PS) $(NAME_CHECKER)
+	@rm -f $(NAME_PS) $(NAME_CHECKER)
 
 re: fclean all
 

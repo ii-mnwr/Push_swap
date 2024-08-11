@@ -6,13 +6,13 @@
 /*   By: mthodi <mthodi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:09:33 by mthodi            #+#    #+#             */
-/*   Updated: 2024/08/10 10:10:16 by mthodi           ###   ########.fr       */
+/*   Updated: 2024/08/11 16:23:23 by mthodi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa_sb(t_list **a, char swap_type)
+void	sa_sb(t_list **a, char swap_type, int flag)
 {
 	int	temp;
 
@@ -21,10 +21,13 @@ void	sa_sb(t_list **a, char swap_type)
 	temp = (*a)->value;
 	(*a)->value = (*a)->next->value;
 	(*a)->next->value = temp;
-	if (swap_type == 'a')
-		write(1, "sa\n", 3);
-	else
-		write(1, "sb\n", 3);
+	if (flag == 1)
+	{
+		if (swap_type == 'a')
+			write(1, "sa\n", 3);
+		else
+			write(1, "sb\n", 3);
+	}
 }
 
 void	ss(t_list **a, t_list **b)
@@ -42,7 +45,7 @@ void	ss(t_list **a, t_list **b)
 	write(1, "ss\n", 3);
 }
 
-void	pa(t_list **a, t_list **b)
+void	pa(t_list **a, t_list **b, int flag)
 {
 	t_list	*temp;
 	t_list	*node;
@@ -54,10 +57,11 @@ void	pa(t_list **a, t_list **b)
 	*b = temp->next;
 	ft_lstadd_front(a, node);
 	free(temp);
-	write(1, "pa\n", 3);
+	if (flag == 1)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_list **a, t_list **b)
+void	pb(t_list **a, t_list **b, int flag)
 {
 	t_list	*temp;
 	t_list	*node;
@@ -69,5 +73,6 @@ void	pb(t_list **a, t_list **b)
 	*a = temp->next;
 	ft_lstadd_front(b, node);
 	free(temp);
-	write(1, "pb\n", 3);
+	if (flag == 1)
+		write(1, "pb\n", 3);
 }
