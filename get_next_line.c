@@ -6,7 +6,7 @@
 /*   By: mthodi <mthodi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 11:48:47 by mthodi            #+#    #+#             */
-/*   Updated: 2024/08/08 12:15:06 by mthodi           ###   ########.fr       */
+/*   Updated: 2024/08/12 16:11:12 by mthodi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,13 @@ static void	add_heap_to_static(char **s, char *buf)
 	}
 }
 
-static	int	ft_exit(char **line)
+static	int	ft_exit(char **line, char **stack)
 {
+	if (*stack)
+	{
+		free(*stack);
+		*stack = NULL;
+	}
 	*line = NULL;
 	return (0);
 }
@@ -73,7 +78,7 @@ int	get_next_line(const int fd, char **line)
 		ret = read(fd, heap, BUFFER_SIZE);
 	}
 	if (!s[fd] || s[fd][0] == '\0')
-		return (ft_exit(line));
+		return (ft_exit(line, &s[fd]));
 	if (s[fd])
 		if (verify_new_line(&(s[fd]), line))
 			return (1);

@@ -6,7 +6,7 @@
 /*   By: mthodi <mthodi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 14:24:28 by mthodi            #+#    #+#             */
-/*   Updated: 2024/08/11 16:33:22 by mthodi           ###   ########.fr       */
+/*   Updated: 2024/08/12 16:11:45 by mthodi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,11 +113,14 @@ int	main(int argc, char **argv)
 	{
 		if (do_commands(line, stack_a, stack_b))
 		{
+			free(line);
 			found_error();
 			return (-1);
 		}
 		free(line);
 	}
 	print_checker_res(stack_a, stack_b);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }
